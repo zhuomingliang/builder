@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="uiWebsite" >
+<head>
+  <meta charset="utf-8">
+  <title>angular-ui</title>
+  <link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css">
+  <script src="http://code.angularjs.org/1.0.0/angular-1.0.0.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+  <button ng-click="selectAllModules()">Select all</button>
+  <button ng-click="buildSelectedModules()">Build {{selectedModules().length}} Modules</button>
+  <div ng-repeat="module in modules">
+    <input type="checkbox" ng-model="module.checked"> {{module.name}}
+  </div>
+  <br />
+  <ul>
+    <li ng-repeat="module in selectedModules()">
+      {{module.name}}
+    </li>
+  </ul>
+</body>
+</html>

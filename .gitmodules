@@ -1,0 +1,3 @@
+[submodule "public/angular-ui"]
+	path = public/angular-ui
+	url = https://github.com/angular-ui/angular-ui.git
