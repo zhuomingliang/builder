@@ -9,6 +9,7 @@ var publicDir = __dirname+"/public"
 app.configure(function() {
     app.use(express.errorHandler());
     app.use(express.static(publicDir));
+    app.use(express.bodyParser());
 });
 
 app.listen(process.env.PORT || '3000');
@@ -51,7 +52,7 @@ function buildModules(modules) {
 }
 
 app.post('/build', function(req, res) {
-    console.log('post build '+req.body);
+    console.log('post build '+req.body.modules);
     buildModules(req.body.modules);
 });
 
